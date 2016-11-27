@@ -9,6 +9,7 @@ target 'Teams' do
   pod 'Parse'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod "ImagePickerSheetController", :git => 'https://github.com/lbrndnr/ImagePickerSheetController.git', :branch => 'swift3'
+  pod 'JSQMessagesViewController'
 
 
 end

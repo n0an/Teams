@@ -1,12 +1,16 @@
 PODS:
   - Bolts/Tasks (1.8.4)
   - ImagePickerSheetController (0.9.3)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
   - Spring (1.0.3)
 
 DEPENDENCIES:
   - ImagePickerSheetController (from `https://github.com/lbrndnr/ImagePickerSheetController.git`, branch `swift3`)
+  - JSQMessagesViewController
   - Parse
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
 
@@ -29,9 +33,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   ImagePickerSheetController: 4789b06940e299431455c61be77fda440883c36c
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: fb3f7637d744cc616b72218b9cee31a75dc019da
+PODFILE CHECKSUM: ff1e692a7cf264bafcf83d3facdbab0833b7383f
 
 COCOAPODS: 1.1.0
