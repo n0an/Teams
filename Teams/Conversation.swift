@@ -30,6 +30,11 @@ public class Conversation: PFObject, PFSubclassing {
         self.lastUpdate = NSDate()
     }
     
+    override init() {
+        super.init()
+    }
+    
+    
     
     // MARK: - PFSubclassing
     

@@ -38,8 +38,10 @@ class LoginPasswordViewController: UIViewController {
             if error == nil {
                 
                 self.setupUserInstallation()
+                self.performSegue(withIdentifier: "JoinTeamViewController", sender: nil)
+
                 
-                self.dismiss(animated: true, completion: nil)
+//                self.dismiss(animated: true, completion: nil)
                 
                 
             } else {

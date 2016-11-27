@@ -33,7 +33,7 @@
         <!--Root View Controller-->
         <scene sceneID="5Gf-eQ-7Up">
             <objects>
-                <tableViewController id="MGn-Cr-x5h" sceneMemberID="viewController">
+                <tableViewController id="MGn-Cr-x5h" customClass="RecentsTableViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="22" sectionFooterHeight="22" id="ceH-f7-waT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,9 +98,17 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem systemItem="compose" id="3Mf-h4-gKF"/>
+                        <barButtonItem title="Log Out" id="YSg-8y-AQI">
+                            <connections>
+                                <action selector="logOutClickedWithSender:" destination="MGn-Cr-x5h" id="bwL-kT-vvo"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Root View Controller" id="MIy-LQ-ccE"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="logOutBarButtonItem" destination="YSg-8y-AQI" id="6Xj-hr-jnE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1G4-H3-Paw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,7 +283,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="iHR-Aw-KTf">
             <objects>
-                <viewController id="Vbc-mv-48D" customClass="WelcomeViewController" customModule="Interests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vbc-mv-48D" customClass="WelcomeViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JGJ-AP-Wjm"/>
                         <viewControllerLayoutGuide type="bottom" id="Ppj-uo-uSX"/>
@@ -360,7 +368,7 @@
         <!--Signup Email View Controller-->
         <scene sceneID="38N-iG-47j">
             <objects>
-                <viewController id="pfE-sx-b3e" customClass="SignupEmailViewController" customModule="Interests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pfE-sx-b3e" customClass="SignupEmailViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="epN-OI-fbK"/>
                         <viewControllerLayoutGuide type="bottom" id="5zF-3x-Ay7"/>
@@ -385,7 +393,7 @@
                                     <action selector="nextButtonClicked:" destination="pfE-sx-b3e" eventType="touchUpInside" id="a64-Ak-fo8"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlp-lR-Rxo" customClass="DesignableView" customModule="Interests" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlp-lR-Rxo" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="20" y="200" width="335" height="62"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZK-l6-GEJ">
@@ -457,7 +465,7 @@
         <!--Signup Password View Controller-->
         <scene sceneID="okY-Pi-s9K">
             <objects>
-                <viewController id="how-Jp-K4u" customClass="SignupPasswordViewController" customModule="Interests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="how-Jp-K4u" customClass="SignupPasswordViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ox3-AE-qX6"/>
                         <viewControllerLayoutGuide type="bottom" id="Os9-DW-BCf"/>
@@ -482,7 +490,7 @@
                                     <action selector="nextButtonClicked:" destination="how-Jp-K4u" eventType="touchUpInside" id="jeM-gM-H29"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQO-U5-vBY" customClass="DesignableView" customModule="Interests" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQO-U5-vBY" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="20" y="200" width="335" height="62"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qH9-Z6-bB6">
@@ -554,7 +562,7 @@
         <!--Signup Profile View Controller-->
         <scene sceneID="Qan-5L-Vf1">
             <objects>
-                <viewController id="t4c-TF-1SV" customClass="SignupProfileViewController" customModule="Interests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t4c-TF-1SV" customClass="SignupProfileViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BJQ-dS-8nS"/>
                         <viewControllerLayoutGuide type="bottom" id="kDb-x3-Otz"/>
@@ -571,7 +579,7 @@
                                     <action selector="backButtonClicked" destination="t4c-TF-1SV" eventType="touchUpInside" id="uEy-Hd-ec2"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYH-d6-cI0" customClass="DesignableView" customModule="Interests" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYH-d6-cI0" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="20" y="200" width="335" height="62"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pih-1e-nEd">
@@ -670,7 +678,7 @@
         <!--Login Email View Controller-->
         <scene sceneID="Vda-kF-BcA">
             <objects>
-                <viewController id="9Xr-dk-Hbu" customClass="LoginEmailViewController" customModule="Interests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Xr-dk-Hbu" customClass="LoginEmailViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="98U-fk-XX8"/>
                         <viewControllerLayoutGuide type="bottom" id="Isv-mJ-pYW"/>
@@ -695,7 +703,7 @@
                                     <action selector="nextButtonClicked:" destination="9Xr-dk-Hbu" eventType="touchUpInside" id="05V-Ou-Eod"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-Yj-w14" customClass="DesignableView" customModule="Interests" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-Yj-w14" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="20" y="200" width="335" height="62"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4H-ee-qia">
@@ -766,7 +774,7 @@
         <!--Login Password View Controller-->
         <scene sceneID="SL1-2X-Lhs">
             <objects>
-                <viewController id="N4N-Bx-mTL" customClass="LoginPasswordViewController" customModule="Interests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N4N-Bx-mTL" customClass="LoginPasswordViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rsT-JS-RdT"/>
                         <viewControllerLayoutGuide type="bottom" id="35O-3G-xdf"/>
@@ -791,7 +799,7 @@
                                     <action selector="logInClicked:" destination="N4N-Bx-mTL" eventType="touchUpInside" id="YsT-IY-Kg0"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jd-l7-heN" customClass="DesignableView" customModule="Interests" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jd-l7-heN" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="20" y="200" width="335" height="62"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mfz-0b-lys">
@@ -862,7 +870,7 @@
         <!--Join Team View Controller-->
         <scene sceneID="Kcw-4Y-tTv">
             <objects>
-                <viewController id="Tl6-cW-FGX" customClass="JoinTeamViewController" customModule="Interests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tl6-cW-FGX" customClass="JoinTeamViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eFe-O2-plK"/>
                         <viewControllerLayoutGuide type="bottom" id="h1M-f1-70Y"/>
@@ -876,10 +884,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Join"/>
                                 <connections>
-                                    <action selector="join:" destination="Tl6-cW-FGX" eventType="touchUpInside" id="YRz-ra-cnh"/>
+                                    <action selector="joinWithSender:" destination="Tl6-cW-FGX" eventType="touchUpInside" id="09q-ej-4wi"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-mg-RPt" customClass="DesignableView" customModule="Interests" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-mg-RPt" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="20" y="200" width="335" height="62"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your team id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-Kl-cDA">
@@ -956,7 +964,7 @@
         <!--Create New Team View Controller-->
         <scene sceneID="f0h-XF-l2X">
             <objects>
-                <viewController id="FWG-SI-mKc" customClass="CreateNewTeamViewController" customModule="Interests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FWG-SI-mKc" customClass="CreateNewTeamViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Xf-iO-pfa"/>
                         <viewControllerLayoutGuide type="bottom" id="znP-gg-kIa"/>
@@ -970,10 +978,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="backButtonClicked:" destination="FWG-SI-mKc" eventType="touchUpInside" id="QGf-kZ-KJb"/>
+                                    <action selector="backButtonClickedWithSender:" destination="FWG-SI-mKc" eventType="touchUpInside" id="R8f-Yb-kps"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWm-hH-UUD" customClass="DesignableView" customModule="Interests" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWm-hH-UUD" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="20" y="200" width="335" height="62"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your new team id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uXo-TG-JAy">
@@ -1018,7 +1026,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
-                                    <action selector="createNewTeamClicked:" destination="FWG-SI-mKc" eventType="touchUpInside" id="bvW-iv-L4g"/>
+                                    <action selector="createNewTeamClickedWithSender:" destination="FWG-SI-mKc" eventType="touchUpInside" id="e7P-uo-oOL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Team" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5w-Os-hdZ">
@@ -1059,7 +1067,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfI-32-fad" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="r3f-4Q-QME">
                     <connections>
-                        <action selector="pickFeaturedImageClicked:" destination="FWG-SI-mKc" id="oCo-ED-swb"/>
+                        <action selector="pickFeaturedImageClickedWithSender:" destination="FWG-SI-mKc" id="Wba-rP-K9b"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

@@ -23,6 +23,9 @@
 		1804E90F1DEB48F1005A2CF4 /* SignupPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E90A1DEB48F1005A2CF4 /* SignupPasswordViewController.swift */; };
 		1804E9101DEB48F1005A2CF4 /* SignupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E90B1DEB48F1005A2CF4 /* SignupProfileViewController.swift */; };
 		1804E9161DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9151DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift */; };
+		1804E9191DEB592F005A2CF4 /* RecentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9181DEB592F005A2CF4 /* RecentsTableViewController.swift */; };
+		1804E91C1DEB5AFE005A2CF4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E91B1DEB5AFE005A2CF4 /* WelcomeViewController.swift */; };
+		1804E91E1DEB5DFE005A2CF4 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E91D1DEB5DFE005A2CF4 /* JoinTeamViewController.swift */; };
 		806E6641B612C556EC3F5769 /* Pods_Teams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6631E569A00249E5FF70B67E /* Pods_Teams.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,10 @@
 		1804E90A1DEB48F1005A2CF4 /* SignupPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPasswordViewController.swift; sourceTree = "<group>"; };
 		1804E90B1DEB48F1005A2CF4 /* SignupProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupProfileViewController.swift; sourceTree = "<group>"; };
 		1804E9151DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewTeamViewController.swift; sourceTree = "<group>"; };
+		1804E9181DEB592F005A2CF4 /* RecentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsTableViewController.swift; sourceTree = "<group>"; };
+		1804E91B1DEB5AFE005A2CF4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1804E91D1DEB5DFE005A2CF4 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
+		1804E91F1DEB5EF4005A2CF4 /* Teams.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Teams.entitlements; sourceTree = "<group>"; };
 		54FEB0CB9DED71B40FED2DA8 /* Pods-Teams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teams/Pods-Teams.debug.xcconfig"; sourceTree = "<group>"; };
 		6631E569A00249E5FF70B67E /* Pods_Teams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD06544AEB1E7242CC0C73DD /* Pods-Teams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teams.release.xcconfig"; path = "Pods/Target Support Files/Pods-Teams/Pods-Teams.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,7 +99,10 @@
 		1804E8E91DEB3A8D005A2CF4 /* Teams */ = {
 			isa = PBXGroup;
 			children = (
+				1804E91F1DEB5EF4005A2CF4 /* Teams.entitlements */,
 				1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */,
+				1804E91B1DEB5AFE005A2CF4 /* WelcomeViewController.swift */,
+				1804E91A1DEB5932005A2CF4 /* Recents Tab */,
 				1804E9111DEB48F7005A2CF4 /* Login */,
 				1804E9121DEB48FB005A2CF4 /* Signup */,
 				1804E9171DEB4D29005A2CF4 /* Join and Create Team */,
@@ -141,8 +151,17 @@
 			isa = PBXGroup;
 			children = (
 				1804E9151DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift */,
+				1804E91D1DEB5DFE005A2CF4 /* JoinTeamViewController.swift */,
 			);
 			name = "Join and Create Team";
+			sourceTree = "<group>";
+		};
+		1804E91A1DEB5932005A2CF4 /* Recents Tab */ = {
+			isa = PBXGroup;
+			children = (
+				1804E9181DEB592F005A2CF4 /* RecentsTableViewController.swift */,
+			);
+			name = "Recents Tab";
 			sourceTree = "<group>";
 		};
 		A61E963B9D51B419472BC394 /* Frameworks */ = {
@@ -190,6 +209,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 358V8FBM3U;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -281,13 +305,16 @@
 				1804E90D1DEB48F1005A2CF4 /* LoginPasswordViewController.swift in Sources */,
 				1804E9161DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift in Sources */,
 				1804E9101DEB48F1005A2CF4 /* SignupProfileViewController.swift in Sources */,
+				1804E9191DEB592F005A2CF4 /* RecentsTableViewController.swift in Sources */,
 				1804E90F1DEB48F1005A2CF4 /* SignupPasswordViewController.swift in Sources */,
+				1804E91C1DEB5AFE005A2CF4 /* WelcomeViewController.swift in Sources */,
 				1804E90C1DEB48F1005A2CF4 /* LoginEmailViewController.swift in Sources */,
 				1804E8FF1DEB438C005A2CF4 /* Global.swift in Sources */,
 				1804E8ED1DEB3A8D005A2CF4 /* ViewController.swift in Sources */,
 				1804E90E1DEB48F1005A2CF4 /* SignupEmailViewController.swift in Sources */,
 				1804E8EB1DEB3A8D005A2CF4 /* AppDelegate.swift in Sources */,
 				1804E9021DEB44EE005A2CF4 /* Team.swift in Sources */,
+				1804E91E1DEB5DFE005A2CF4 /* JoinTeamViewController.swift in Sources */,
 				1804E8FD1DEB4179005A2CF4 /* User.swift in Sources */,
 				1804E9061DEB481D005A2CF4 /* Message.swift in Sources */,
 			);
@@ -413,6 +440,7 @@
 			baseConfigurationReference = 54FEB0CB9DED71B40FED2DA8 /* Pods-Teams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Teams/Teams.entitlements;
 				DEVELOPMENT_TEAM = 358V8FBM3U;
 				INFOPLIST_FILE = Teams/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -427,6 +455,7 @@
 			baseConfigurationReference = DD06544AEB1E7242CC0C73DD /* Pods-Teams.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Teams/Teams.entitlements;
 				DEVELOPMENT_TEAM = 358V8FBM3U;
 				INFOPLIST_FILE = Teams/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -8,5 +8,7 @@ target 'Teams' do
   # Pods for Teams
   pod 'Parse'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod "ImagePickerSheetController", :git => 'https://github.com/lbrndnr/ImagePickerSheetController.git', :branch => 'swift3'
+
 
 end

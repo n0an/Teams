@@ -28,6 +28,10 @@ public class User: PFUser {
         self.email = email
     }
     
+    override init() {
+        super.init()
+    }
+    
     
     
     

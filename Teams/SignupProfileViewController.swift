@@ -104,7 +104,9 @@ class SignupProfileViewController: UIViewController {
                     
                     self.setupUserInstallation()
                     
-                    self.dismiss(animated: true, completion: nil)
+//                    self.dismiss(animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "JoinTeamViewController", sender: nil)
+
                     
                     
                 } else {

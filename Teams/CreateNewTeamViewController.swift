@@ -10,6 +10,8 @@ import UIKit
 import Parse
 import Photos
 import Spring
+import ImagePickerSheetController
+
 
 class CreateNewTeamViewController: UIViewController {
     
@@ -76,6 +78,7 @@ class CreateNewTeamViewController: UIViewController {
         
         if authorization == .notDetermined {
             
+            
             PHPhotoLibrary.requestAuthorization({ (status) -> Void in
                 
                 DispatchQueue.main.async {
@@ -83,28 +86,46 @@ class CreateNewTeamViewController: UIViewController {
                 }
                 
             })
-            return
+
+            
+                        return
         }
         
         if authorization == .authorized {
-            let controller = ImagePickerSheetController()
+            let controller = ImagePickerSheetController(mediaType: .image)
             
-            controller.addAction(ImageAction(title: NSLocalizedString("Take Photo or Video", comment: "ActionTitle"),
-                                             secondaryTitle: NSLocalizedString("Use this one", comment: "Action Title"),
-                                             handler: { (_) -> () in
-                                                
-                                                self.presentCamera()
-                                                
-            }, secondaryHandler: { (action, numberOfPhotos) -> () in
-                controller.getSelectedImagesWithCompletion({ (images) -> Void in
-                    self.featuredImage = images[0]
-                    self.teamFeaturedImage.image = self.featuredImage
-                })
+            controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo Or Video", comment: "Action Title"), secondaryTitle: NSLocalizedString("Use this one", comment: "Action Title"), handler: { _ in
+                self.presentCamera()
+                
+            }, secondaryHandler: { _, numberOfPhotos in
+                
+                print("secondaryHandler, numberOfPhotos = \(numberOfPhotos)")
+                
+                
+                
             }))
             
-            controller.addAction(ImageAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: nil, secondaryHandler: nil))
+            controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .cancel, handler: { _ in
+                print("Cancelled")
+            }))
             
-            presentViewController(controller, animated: true, completion: nil)
+   
+//            controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo or Video", comment: "ActionTitle"),
+//                                             secondaryTitle: NSLocalizedString("Use this one", comment: "Action Title"),
+//                                             handler: { (_) -> () in
+//                                                
+//                                                self.presentCamera()
+//                                                
+//            }, secondaryHandler: { (action, numberOfPhotos) -> () in
+//                controller.getSelectedImagesWithCompletion({ (images) -> Void in
+//                    self.featuredImage = images[0]
+//                    self.teamFeaturedImage.image = self.featuredImage
+//                })
+//            }))
+//            
+//            controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: nil, secondaryHandler: nil))
+            
+            present(controller, animated: true, completion: nil)
         }
     }
     

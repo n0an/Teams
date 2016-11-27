@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ImagePickerSheetController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A0819ADC1D9C88E3C16CDC19AFA9159</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2AAAB9973850C35994DC04473435E1A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C8AA1BAF35413BDB954A1DF93576ED1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58C3F1E3C8C3FACF22F4EB91F0883D66</key>
+		<key>331C2416764DE1D980B377FB09431988</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>7129FAB61478FA70223DADF4921468CD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8F38915F791F4C30527C6BA050D2B7E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

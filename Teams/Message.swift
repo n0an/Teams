@@ -37,6 +37,10 @@ public class Message: PFObject, PFSubclassing {
         self.conversationId = conversationId
     }
     
+    override init() {
+        super.init()
+    }
+    
     
     // MARK: - PFSubclassing
         public static func parseClassName() -> String {
