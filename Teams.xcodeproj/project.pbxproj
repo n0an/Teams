@@ -22,6 +22,7 @@
 		1804E90E1DEB48F1005A2CF4 /* SignupEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9091DEB48F1005A2CF4 /* SignupEmailViewController.swift */; };
 		1804E90F1DEB48F1005A2CF4 /* SignupPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E90A1DEB48F1005A2CF4 /* SignupPasswordViewController.swift */; };
 		1804E9101DEB48F1005A2CF4 /* SignupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E90B1DEB48F1005A2CF4 /* SignupProfileViewController.swift */; };
+		1804E9161DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9151DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift */; };
 		806E6641B612C556EC3F5769 /* Pods_Teams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6631E569A00249E5FF70B67E /* Pods_Teams.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		1804E9091DEB48F1005A2CF4 /* SignupEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupEmailViewController.swift; sourceTree = "<group>"; };
 		1804E90A1DEB48F1005A2CF4 /* SignupPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPasswordViewController.swift; sourceTree = "<group>"; };
 		1804E90B1DEB48F1005A2CF4 /* SignupProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupProfileViewController.swift; sourceTree = "<group>"; };
+		1804E9151DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewTeamViewController.swift; sourceTree = "<group>"; };
 		54FEB0CB9DED71B40FED2DA8 /* Pods-Teams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teams/Pods-Teams.debug.xcconfig"; sourceTree = "<group>"; };
 		6631E569A00249E5FF70B67E /* Pods_Teams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD06544AEB1E7242CC0C73DD /* Pods-Teams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teams.release.xcconfig"; path = "Pods/Target Support Files/Pods-Teams/Pods-Teams.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */,
 				1804E9111DEB48F7005A2CF4 /* Login */,
 				1804E9121DEB48FB005A2CF4 /* Signup */,
+				1804E9171DEB4D29005A2CF4 /* Join and Create Team */,
 				1804E9001DEB444A005A2CF4 /* Model */,
 				1804E8EC1DEB3A8D005A2CF4 /* ViewController.swift */,
 				1804E8EE1DEB3A8D005A2CF4 /* Main.storyboard */,
@@ -132,6 +135,14 @@
 				1804E90B1DEB48F1005A2CF4 /* SignupProfileViewController.swift */,
 			);
 			name = Signup;
+			sourceTree = "<group>";
+		};
+		1804E9171DEB4D29005A2CF4 /* Join and Create Team */ = {
+			isa = PBXGroup;
+			children = (
+				1804E9151DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift */,
+			);
+			name = "Join and Create Team";
 			sourceTree = "<group>";
 		};
 		A61E963B9D51B419472BC394 /* Frameworks */ = {
@@ -268,6 +279,7 @@
 			files = (
 				1804E9041DEB46BF005A2CF4 /* Conversation.swift in Sources */,
 				1804E90D1DEB48F1005A2CF4 /* LoginPasswordViewController.swift in Sources */,
+				1804E9161DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift in Sources */,
 				1804E9101DEB48F1005A2CF4 /* SignupProfileViewController.swift in Sources */,
 				1804E90F1DEB48F1005A2CF4 /* SignupPasswordViewController.swift in Sources */,
 				1804E90C1DEB48F1005A2CF4 /* LoginEmailViewController.swift in Sources */,
