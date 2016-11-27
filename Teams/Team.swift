@@ -26,6 +26,7 @@ public class Team: PFObject, PFSubclassing {
         self.title = title
         self.featuredImageFile = featuredImage.createPFFile()
         self.memberIds = [newMemberId]  // an array contains only one element
+        numberOfMembers = 1
     }
     
     override init() {

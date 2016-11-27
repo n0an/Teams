@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1804E8EB1DEB3A8D005A2CF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */; };
-		1804E8ED1DEB3A8D005A2CF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E8EC1DEB3A8D005A2CF4 /* ViewController.swift */; };
 		1804E8F01DEB3A8D005A2CF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1804E8EE1DEB3A8D005A2CF4 /* Main.storyboard */; };
 		1804E8F21DEB3A8D005A2CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1804E8F11DEB3A8D005A2CF4 /* Assets.xcassets */; };
 		1804E8F51DEB3A8D005A2CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1804E8F31DEB3A8D005A2CF4 /* LaunchScreen.storyboard */; };
@@ -26,13 +25,14 @@
 		1804E9191DEB592F005A2CF4 /* RecentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9181DEB592F005A2CF4 /* RecentsTableViewController.swift */; };
 		1804E91C1DEB5AFE005A2CF4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E91B1DEB5AFE005A2CF4 /* WelcomeViewController.swift */; };
 		1804E91E1DEB5DFE005A2CF4 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E91D1DEB5DFE005A2CF4 /* JoinTeamViewController.swift */; };
+		1804E9211DEB6672005A2CF4 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9201DEB6672005A2CF4 /* ContactsTableViewController.swift */; };
+		1804E9231DEB66D0005A2CF4 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9221DEB66D0005A2CF4 /* ContactTableViewCell.swift */; };
 		806E6641B612C556EC3F5769 /* Pods_Teams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6631E569A00249E5FF70B67E /* Pods_Teams.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1804E8E71DEB3A8D005A2CF4 /* Teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1804E8EC1DEB3A8D005A2CF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1804E8EF1DEB3A8D005A2CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1804E8F11DEB3A8D005A2CF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1804E8F41DEB3A8D005A2CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +52,8 @@
 		1804E91B1DEB5AFE005A2CF4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1804E91D1DEB5DFE005A2CF4 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
 		1804E91F1DEB5EF4005A2CF4 /* Teams.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Teams.entitlements; sourceTree = "<group>"; };
+		1804E9201DEB6672005A2CF4 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		1804E9221DEB66D0005A2CF4 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		54FEB0CB9DED71B40FED2DA8 /* Pods-Teams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teams/Pods-Teams.debug.xcconfig"; sourceTree = "<group>"; };
 		6631E569A00249E5FF70B67E /* Pods_Teams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD06544AEB1E7242CC0C73DD /* Pods-Teams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teams.release.xcconfig"; path = "Pods/Target Support Files/Pods-Teams/Pods-Teams.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,12 +104,12 @@
 				1804E91F1DEB5EF4005A2CF4 /* Teams.entitlements */,
 				1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */,
 				1804E91B1DEB5AFE005A2CF4 /* WelcomeViewController.swift */,
-				1804E91A1DEB5932005A2CF4 /* Recents Tab */,
 				1804E9111DEB48F7005A2CF4 /* Login */,
 				1804E9121DEB48FB005A2CF4 /* Signup */,
 				1804E9171DEB4D29005A2CF4 /* Join and Create Team */,
+				1804E91A1DEB5932005A2CF4 /* Recents Tab */,
+				1804E9241DEB66D3005A2CF4 /* Contacts Tab */,
 				1804E9001DEB444A005A2CF4 /* Model */,
-				1804E8EC1DEB3A8D005A2CF4 /* ViewController.swift */,
 				1804E8EE1DEB3A8D005A2CF4 /* Main.storyboard */,
 				1804E8F11DEB3A8D005A2CF4 /* Assets.xcassets */,
 				1804E8F31DEB3A8D005A2CF4 /* LaunchScreen.storyboard */,
@@ -162,6 +164,15 @@
 				1804E9181DEB592F005A2CF4 /* RecentsTableViewController.swift */,
 			);
 			name = "Recents Tab";
+			sourceTree = "<group>";
+		};
+		1804E9241DEB66D3005A2CF4 /* Contacts Tab */ = {
+			isa = PBXGroup;
+			children = (
+				1804E9201DEB6672005A2CF4 /* ContactsTableViewController.swift */,
+				1804E9221DEB66D0005A2CF4 /* ContactTableViewCell.swift */,
+			);
+			name = "Contacts Tab";
 			sourceTree = "<group>";
 		};
 		A61E963B9D51B419472BC394 /* Frameworks */ = {
@@ -307,11 +318,12 @@
 				1804E9101DEB48F1005A2CF4 /* SignupProfileViewController.swift in Sources */,
 				1804E9191DEB592F005A2CF4 /* RecentsTableViewController.swift in Sources */,
 				1804E90F1DEB48F1005A2CF4 /* SignupPasswordViewController.swift in Sources */,
+				1804E9231DEB66D0005A2CF4 /* ContactTableViewCell.swift in Sources */,
 				1804E91C1DEB5AFE005A2CF4 /* WelcomeViewController.swift in Sources */,
 				1804E90C1DEB48F1005A2CF4 /* LoginEmailViewController.swift in Sources */,
 				1804E8FF1DEB438C005A2CF4 /* Global.swift in Sources */,
-				1804E8ED1DEB3A8D005A2CF4 /* ViewController.swift in Sources */,
 				1804E90E1DEB48F1005A2CF4 /* SignupEmailViewController.swift in Sources */,
+				1804E9211DEB6672005A2CF4 /* ContactsTableViewController.swift in Sources */,
 				1804E8EB1DEB3A8D005A2CF4 /* AppDelegate.swift in Sources */,
 				1804E9021DEB44EE005A2CF4 /* Team.swift in Sources */,
 				1804E91E1DEB5DFE005A2CF4 /* JoinTeamViewController.swift in Sources */,
