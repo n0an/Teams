@@ -101,7 +101,12 @@ class CreateNewTeamViewController: UIViewController {
                 
                 print("secondaryHandler, numberOfPhotos = \(numberOfPhotos)")
                 
+                let selectedAsset = controller.selectedAssets[0]
                 
+                let selectedImage = self.getAssetThumbnail(asset: selectedAsset)
+                
+                self.featuredImage = selectedImage
+                self.teamFeaturedImage.image = self.featuredImage
                 
             }))
             
@@ -138,6 +143,27 @@ class CreateNewTeamViewController: UIViewController {
         containerView.curve = "spring"
         containerView.duration = 1.0
         containerView.animate()
+    }
+    
+    
+    func getAssetThumbnail(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.isSynchronous = true
+        
+        let maxSize = PHImageManagerMaximumSize
+        
+        manager.requestImage(for: asset, targetSize: maxSize, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+
+        
+//        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+//            thumbnail = result!
+//        })
+        
+        return thumbnail
     }
     
 }
