@@ -133,7 +133,11 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
                         } else {
                             
                             let photoMediaItem = JSQPhotoMediaItem(image: nil)
-                            photoMediaItem?.appliesMediaViewMaskAsOutgoing = false
+                            
+                            photoMediaItem?.appliesMediaViewMaskAsOutgoing = sender.objectId == self.currentUser.objectId
+                            
+                            
+//                            photoMediaItem?.appliesMediaViewMaskAsOutgoing = false
                             
                             var newMessage = JSQMessage(senderId: sender.objectId!, displayName: sender.username!, media: photoMediaItem)
                             self.jsqMessages.append(newMessage!)
