@@ -97,7 +97,8 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
         
         messageQuery.whereKey("conversationId", equalTo: (conversation?.objectId!)!)
         messageQuery.order(byAscending: "createdAt")
-        messageQuery.limit = 100
+        
+//        messageQuery.limit = 100
         messageQuery.cachePolicy = .networkElseCache
         messageQuery.includeKey("sender")
         
@@ -154,6 +155,8 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
                             })
                         }
                     }
+                    
+                    
                     
                 }
                 
@@ -347,7 +350,6 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
     
     // MARK: - JSQMessageViewContorller Datasource
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return jsqMessages.count
     }
@@ -357,7 +359,6 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
         
         
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
-        
         
         let message = jsqMessages[indexPath.item]
         

@@ -85,6 +85,7 @@ class ContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
         let currentUser = User.current()!
         let user1 = currentUser
         let user2 = self.users[indexPath.row]
@@ -124,6 +125,9 @@ class ContactsTableViewController: UITableViewController {
                 })
             }
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+
     }
 
     

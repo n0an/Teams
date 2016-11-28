@@ -40,7 +40,8 @@ class RecentsTableViewCell: UITableViewCell {
         
         let messageQuery = PFQuery(className: Message.parseClassName())
         messageQuery.whereKey("conversationId", equalTo: conversation.objectId!)
-        messageQuery.order(byAscending: "createdAt")
+        messageQuery.order(byDescending: "createdAt")
+//        messageQuery.order(byAscending: "createdAt")
         messageQuery.limit = 1
         messageQuery.includeKey("sender")
 
@@ -77,7 +78,7 @@ class RecentsTableViewCell: UITableViewCell {
                     
                     // 1. Take last message
 
-                    let lastMessage = objects.last as! Message
+                    let lastMessage = objects.first as! Message
                     
                     // 2. Put text of last message to lastMessageLabel
                     self.lastMessageLabel.text = lastMessage.text
