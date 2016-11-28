@@ -76,9 +76,8 @@ class RecentsTableViewController: UITableViewController {
                 print(error!.localizedDescription)
             } else {
                 
-                self.conversations.removeAll()
-                
                 if let objects = objects as [PFObject]! {
+                    self.conversations.removeAll()
                     
                     for object in objects {
                         

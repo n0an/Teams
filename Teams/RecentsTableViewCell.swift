@@ -81,7 +81,14 @@ class RecentsTableViewCell: UITableViewCell {
                     let lastMessage = objects.first as! Message
                     
                     // 2. Put text of last message to lastMessageLabel
-                    self.lastMessageLabel.text = lastMessage.text
+                    
+                    if lastMessage.photoFile != nil {
+                        self.lastMessageLabel.text = "<img inside>"
+                    } else {
+                        
+                        self.lastMessageLabel.text = lastMessage.text
+                    }
+                    
                     
                     // 3. Put date of message to timeStampLabel
                                         

@@ -90,6 +90,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1586288A1DEC866B00676A92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				158628871DEC7AA400676A92 /* NSDate+Utilities.m */,
+				158628881DEC7AA400676A92 /* NSDate+Utilities.h */,
+				158628851DEC7A7600676A92 /* Teams-Bridging-Header.h */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		1804E8DE1DEB3A8D005A2CF4 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 				1804E91F1DEB5EF4005A2CF4 /* Teams.entitlements */,
 				1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */,
 				1804E91B1DEB5AFE005A2CF4 /* WelcomeViewController.swift */,
+				1586288A1DEC866B00676A92 /* Extensions */,
 				1804E9111DEB48F7005A2CF4 /* Login */,
 				1804E9121DEB48FB005A2CF4 /* Signup */,
 				1804E9171DEB4D29005A2CF4 /* Join and Create Team */,
@@ -122,9 +133,6 @@
 				18C198EF1DEC0A6C000AFE78 /* MessagesViewController */,
 				1804E9001DEB444A005A2CF4 /* Model */,
 				1804E8EE1DEB3A8D005A2CF4 /* Main.storyboard */,
-				158628871DEC7AA400676A92 /* NSDate+Utilities.m */,
-				158628881DEC7AA400676A92 /* NSDate+Utilities.h */,
-				158628851DEC7A7600676A92 /* Teams-Bridging-Header.h */,
 				1804E8F11DEB3A8D005A2CF4 /* Assets.xcassets */,
 				1804E8F31DEB3A8D005A2CF4 /* LaunchScreen.storyboard */,
 				1804E8F61DEB3A8D005A2CF4 /* Info.plist */,
