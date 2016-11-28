@@ -85,8 +85,9 @@ class RecentsTableViewCell: UITableViewCell {
                     
                     // 3. Put date of message to timeStampLabel
                                         
-                    let messageDate = lastMessage.createdAt!
-                    self.timeStampLabel.text = dateFormatter.string(from: messageDate)
+                    let messageDate = lastMessage.createdAt! as NSDate
+                    self.timeStampLabel.text = messageDate.stringFromDate()
+//                    self.timeStampLabel.text = dateFormatter.string(from: messageDate)
                     
                     // 4. Get recipient of conversation: self or another person, configure userNameLabel and profileImageView
                     
@@ -155,14 +156,50 @@ class RecentsTableViewCell: UITableViewCell {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 }
+
+
+
+
+
+
+fileprivate extension NSDate {
+    func stringFromDate() -> String {
+        let interval = NSDate().days(after: self as Date!)
+        var dateString = ""
+        
+        if interval == 0 {
+            dateString = "Today"
+        } else if interval == 1 {
+            dateString = "Yesterday"
+        } else if interval > 1 {
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "mm/dd/yyyy"
+            dateString = dateFormat.string(from: self as Date)
+        }
+        
+        return dateString
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

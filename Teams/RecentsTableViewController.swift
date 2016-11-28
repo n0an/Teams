@@ -62,6 +62,8 @@ class RecentsTableViewController: UITableViewController {
    
         let conversationQuery = PFQuery(className: Conversation.parseClassName(), predicate: predicate)
         
+        conversationQuery.order(byDescending: "lastUpdate")
+
         conversationQuery.cachePolicy = .networkElseCache
         
         conversationQuery.includeKeys(["user1", "user2"])
