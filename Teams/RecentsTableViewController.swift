@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import Parse
 
 class RecentsTableViewController: UITableViewController {
 
     @IBOutlet weak var logOutBarButtonItem: UIBarButtonItem!
     
+    var conversations = [Conversation]()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = self.logOutBarButtonItem
+        
+        loadConversations()
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -19,8 +31,8 @@ class RecentsTableViewController: UITableViewController {
         if User.current() == nil {
             showLogin()
         }
+        
     }
-    
     
     func showLogin() {
         
@@ -29,10 +41,51 @@ class RecentsTableViewController: UITableViewController {
         self.present(welcomeNavigationVC, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func loadConversations() {
+      
+        let currentUser = User.current()!
         
-        self.navigationItem.leftBarButtonItem = self.logOutBarButtonItem
+        let predicate = NSPredicate(format: "user1 = %@ OR user2 = %@", currentUser, currentUser)
+        
+        // find an existing conversations
+   
+        let conversationQuery = PFQuery(className: Conversation.parseClassName(), predicate: predicate)
+        
+        conversationQuery.cachePolicy = .networkElseCache
+        
+        conversationQuery.includeKeys(["user1", "user2"])
+        
+        conversationQuery.findObjectsInBackground { (objects, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                
+                self.conversations.removeAll()
+                
+                if let objects = objects as [PFObject]! {
+                    
+                    for object in objects {
+                        
+                        let conversation = object as! Conversation
+                        
+                        self.conversations.append(conversation)
+
+                    }
+                    
+                    self.tableView.reloadData()
+                    
+                    
+                    
+                }
+                
+                
+            }
+            
+            
+        }
+        
+        
         
     }
     
@@ -52,15 +105,43 @@ class RecentsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return self.conversations.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecentsTableViewCell", for: indexPath) as! RecentsTableViewCell
+        
+        let conversation = self.conversations[indexPath.row]
+        
+        cell.conversation = conversation
+        
+        return cell
+        
+        
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 81.0
     }
 
     
 
 }
+
+
+
+
+
+
+
+
+
+

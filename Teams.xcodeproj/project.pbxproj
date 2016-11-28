@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158628711DEC3EC200676A92 /* RecentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158628701DEC3EC200676A92 /* RecentsTableViewCell.swift */; };
 		1804E8EB1DEB3A8D005A2CF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */; };
 		1804E8F01DEB3A8D005A2CF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1804E8EE1DEB3A8D005A2CF4 /* Main.storyboard */; };
 		1804E8F21DEB3A8D005A2CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1804E8F11DEB3A8D005A2CF4 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		158628701DEC3EC200676A92 /* RecentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsTableViewCell.swift; sourceTree = "<group>"; };
 		1804E8E71DEB3A8D005A2CF4 /* Teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1804E8EF1DEB3A8D005A2CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				1804E9181DEB592F005A2CF4 /* RecentsTableViewController.swift */,
+				158628701DEC3EC200676A92 /* RecentsTableViewCell.swift */,
 			);
 			name = "Recents Tab";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158628711DEC3EC200676A92 /* RecentsTableViewCell.swift in Sources */,
 				1804E9041DEB46BF005A2CF4 /* Conversation.swift in Sources */,
 				1804E90D1DEB48F1005A2CF4 /* LoginPasswordViewController.swift in Sources */,
 				1804E9161DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift in Sources */,

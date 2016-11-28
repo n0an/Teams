@@ -39,11 +39,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="81" id="ast-nb-eo5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecentsTableViewCell" rowHeight="81" id="ast-nb-eo5" customClass="RecentsTableViewCell" customModule="Teams" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="22" width="375" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ast-nb-eo5" id="Uj4-0k-buo">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="80.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="81"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="NPE-mX-k7e">
@@ -89,6 +89,12 @@
                                     <constraint firstAttribute="trailing" secondItem="mwB-a9-kOO" secondAttribute="trailing" constant="41" id="nhg-kx-O4D"/>
                                     <constraint firstAttribute="trailing" secondItem="crs-Px-vRt" secondAttribute="trailing" constant="41" id="vu7-ih-HI8"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="lastMessageLabel" destination="crs-Px-vRt" id="7GS-Dr-gXx"/>
+                                    <outlet property="profileImageView" destination="NPE-mX-k7e" id="v9P-uI-K81"/>
+                                    <outlet property="timeStampLabel" destination="mwB-a9-kOO" id="T9m-Qw-VCg"/>
+                                    <outlet property="userNameLabel" destination="Zqd-Cr-3cK" id="uYw-Hx-TBG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -128,7 +134,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Nf-Cn-SVM" id="tUK-TJ-R1N">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="56.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="LLy-t7-vrl">
@@ -199,7 +205,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MKf-bv-EvM" id="Jby-yY-Y2K">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
