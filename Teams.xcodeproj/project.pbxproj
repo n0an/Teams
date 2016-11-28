@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158628711DEC3EC200676A92 /* RecentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158628701DEC3EC200676A92 /* RecentsTableViewCell.swift */; };
+		158628891DEC7AA400676A92 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 158628871DEC7AA400676A92 /* NSDate+Utilities.m */; };
 		1804E8EB1DEB3A8D005A2CF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */; };
 		1804E8F01DEB3A8D005A2CF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1804E8EE1DEB3A8D005A2CF4 /* Main.storyboard */; };
 		1804E8F21DEB3A8D005A2CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1804E8F11DEB3A8D005A2CF4 /* Assets.xcassets */; };
@@ -33,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		158628701DEC3EC200676A92 /* RecentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsTableViewCell.swift; sourceTree = "<group>"; };
+		158628851DEC7A7600676A92 /* Teams-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Teams-Bridging-Header.h"; sourceTree = "<group>"; };
+		158628871DEC7AA400676A92 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		158628881DEC7AA400676A92 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		1804E8E71DEB3A8D005A2CF4 /* Teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1804E8EF1DEB3A8D005A2CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +90,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1586288A1DEC866B00676A92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				158628871DEC7AA400676A92 /* NSDate+Utilities.m */,
+				158628881DEC7AA400676A92 /* NSDate+Utilities.h */,
+				158628851DEC7A7600676A92 /* Teams-Bridging-Header.h */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		1804E8DE1DEB3A8D005A2CF4 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +124,7 @@
 				1804E91F1DEB5EF4005A2CF4 /* Teams.entitlements */,
 				1804E8EA1DEB3A8D005A2CF4 /* AppDelegate.swift */,
 				1804E91B1DEB5AFE005A2CF4 /* WelcomeViewController.swift */,
+				1586288A1DEC866B00676A92 /* Extensions */,
 				1804E9111DEB48F7005A2CF4 /* Login */,
 				1804E9121DEB48FB005A2CF4 /* Signup */,
 				1804E9171DEB4D29005A2CF4 /* Join and Create Team */,
@@ -167,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				1804E9181DEB592F005A2CF4 /* RecentsTableViewController.swift */,
+				158628701DEC3EC200676A92 /* RecentsTableViewCell.swift */,
 			);
 			name = "Recents Tab";
 			sourceTree = "<group>";
@@ -233,6 +251,7 @@
 					1804E8E61DEB3A8D005A2CF4 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 358V8FBM3U;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -326,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158628711DEC3EC200676A92 /* RecentsTableViewCell.swift in Sources */,
 				1804E9041DEB46BF005A2CF4 /* Conversation.swift in Sources */,
 				1804E90D1DEB48F1005A2CF4 /* LoginPasswordViewController.swift in Sources */,
 				1804E9161DEB4C9F005A2CF4 /* CreateNewTeamViewController.swift in Sources */,
@@ -338,6 +358,7 @@
 				1804E8FF1DEB438C005A2CF4 /* Global.swift in Sources */,
 				1804E90E1DEB48F1005A2CF4 /* SignupEmailViewController.swift in Sources */,
 				1804E9211DEB6672005A2CF4 /* ContactsTableViewController.swift in Sources */,
+				158628891DEC7AA400676A92 /* NSDate+Utilities.m in Sources */,
 				1804E9261DEB6EEF005A2CF4 /* MessagesViewController.swift in Sources */,
 				1804E8EB1DEB3A8D005A2CF4 /* AppDelegate.swift in Sources */,
 				1804E9021DEB44EE005A2CF4 /* Team.swift in Sources */,
@@ -468,12 +489,15 @@
 			baseConfigurationReference = 54FEB0CB9DED71B40FED2DA8 /* Pods-Teams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Teams/Teams.entitlements;
 				DEVELOPMENT_TEAM = 358V8FBM3U;
 				INFOPLIST_FILE = Teams/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonnovoselov.Teams;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Teams/Teams-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -483,12 +507,14 @@
 			baseConfigurationReference = DD06544AEB1E7242CC0C73DD /* Pods-Teams.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Teams/Teams.entitlements;
 				DEVELOPMENT_TEAM = 358V8FBM3U;
 				INFOPLIST_FILE = Teams/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonnovoselov.Teams;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Teams/Teams-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

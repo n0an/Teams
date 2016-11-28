@@ -21,7 +21,7 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Photo from \(senderName)"
+        title = "Photo from \(senderName!)"
         
         imageView = UIImageView(image: image)
         
