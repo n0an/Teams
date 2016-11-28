@@ -85,8 +85,7 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
     
     // MARK: - Load Messages
     
-    func loadMessages()
-    {
+    func loadMessages() {
         var lastMessage: JSQMessage? = nil
         
         if jsqMessages.last != nil {
@@ -119,6 +118,7 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
                         let sender = message.sender as! User
                         self.users.append(sender)
                         
+                        // TEXT MESSAGE
                         if message.photoFile == nil {
                             // this is a text msg
                             let jsqMessage = JSQMessage(senderId: sender.objectId!, senderDisplayName: sender.username!, date: message.createdAt!, text: message.text)
@@ -129,6 +129,7 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
                             if objects.count != 0 {
                                 self.finishReceivingMessage()
                             }
+                            // PHOTO MESSAGE
                         } else {
                             
                             let photoMediaItem = JSQPhotoMediaItem(image: nil)
@@ -162,6 +163,7 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
     
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+        
         let message = Message(text: text, sender: PFUser.current()!, conversationId: conversation.objectId!)
         
         message.saveInBackground { (success, error) -> Void in
@@ -203,20 +205,16 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
                     self.didPressAccessoryButton(sender)
 
                 }
-                
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    self.didPressAccessoryButton(sender)
-//                })
             })
             return
         }
         
         if authorization == .authorized {
             
-            
             let controller = ImagePickerSheetController(mediaType: .image)
             
-            controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo Or Video", comment: "Action Title"), secondaryTitle: NSLocalizedString("Use this one", comment: "Action Title"), handler: { _ in
+            controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo Or Video", comment: "Action Title"), secondaryTitle: NSLocalizedString("Use this Photo", comment: "Action Title"), handler: { _ in
+                
                 self.presentCamera()
                 
             }, secondaryHandler: { _, numberOfPhotos in
@@ -229,31 +227,11 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
                 
                 self.sendPhoto(photo: selectedImage)
                 
-                
             }))
             
             controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .cancel, handler: { _ in
                 print("Cancelled")
             }))
-            
-     
-            
-//            let controller = ImagePickerSheetController()
-//            
-//            controller.addAction(ImageAction(title: NSLocalizedString("Take Photo or Video", comment: "ActionTitle"),
-//                                             secondaryTitle: NSLocalizedString("Send This Photo", comment: "Action Title"),
-//                                             handler: { (_) -> () in
-//                                                
-//                                                self.presentCamera()
-//                                                
-//            }, secondaryHandler: { (action, numberOfPhotos) -> () in
-//                controller.getSelectedImagesWithCompletion({ (images) -> Void in
-//                    
-//                    // TODO: send the image
-//                    self.sendPhoto(images[0]!)
-//                })
-//            }))
-//            controller.addAction(ImageAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: nil, secondaryHandler: nil))
             
             present(controller, animated: true, completion: nil)
         }
@@ -274,10 +252,6 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
             thumbnail = result!
         })
         
-        
-        //        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
-        //            thumbnail = result!
-        //        })
         
         return thumbnail
     }
@@ -310,12 +284,6 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
         
     }
     
-//    override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData!
-//    {
-//        return jsqMessages[indexPath.row]
-//    }
-    
-    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
         let message = jsqMessages[indexPath.item]
         if message.senderId == self.senderId {
@@ -324,17 +292,6 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
         
         return incomingBubbleImage
     }
-    
-//    override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource!
-//    {
-//        let message = jsqMessages[indexPath.item]
-//        if message.senderId == self.senderId {
-//            return outgoingBubbleImage
-//        }
-//        
-//        return incomingBubbleImage
-//    }
-    
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         let messsage = jsqMessages[indexPath.row]
@@ -347,23 +304,11 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
 
     }
     
-//    override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource!
-//    {
-//        let messsage = jsqMessages[indexPath.row]
-//        
-//        if messsage.senderId == self.senderId {
-//            return selfAvatar
-//        }
-//        
-//        return incomingAvatar
-//    }
-    
-    
-    
     // for the time stamp
     
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
+        // For eacth 10th message specify timestamp
         if indexPath.item % 10 == 0 {
             let message = jsqMessages[indexPath.item]
             return JSQMessagesTimestampFormatter.shared().attributedTimestamp(for: message.date)
@@ -371,17 +316,6 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
         
         return nil
     }
-    
-//    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString!
-//    {
-//        if indexPath.item % 10 == 0 {
-//            let message = jsqMessages[indexPath.item]
-//            return JSQMessagesTimestampFormatter.sharedFormatter().attributedTimestampForDate(message.date)
-//        }
-//        
-//        return nil
-//    }
-    
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAt indexPath: IndexPath!) -> CGFloat {
         if indexPath.item % 10 == 0 {
@@ -391,25 +325,14 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
 
     }
     
-//    override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat
-//    {
-//        if indexPath.item % 10 == 0 {
-//            return kJSQMessagesCollectionViewCellLabelHeightDefault
-//        }
-//        return 0
-//    }
-    
-    
-    
-    
-    
+   
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAt indexPath: IndexPath!) {
         let jsqMessage = jsqMessages[indexPath.item]
         if jsqMessage.media != nil { // this is a photo message
             if let imageView = jsqMessage.media.mediaView() as? UIImageView {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let photoViewController = storyboard.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController
+                let photoViewController = storyboard.instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
                 photoViewController.image = imageView.image
                 photoViewController.senderName = jsqMessage.senderDisplayName
                 self.navigationController?.pushViewController(photoViewController, animated: true)
@@ -418,30 +341,12 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
 
     }
     
-//    override func collectionView(collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAtIndexPath indexPath: NSIndexPath!)
-//    {
-//        let jsqMessage = jsqMessages[indexPath.item]
-//        if jsqMessage.media != nil { // this is a photo message
-//            if let imageView = jsqMessage.media.mediaView() as? UIImageView {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let photoViewController = storyboard.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController
-//                photoViewController.image = imageView.image
-//                photoViewController.senderName = jsqMessage.senderDisplayName
-//                self.navigationController?.pushViewController(photoViewController, animated: true)
-//            }
-//        }
-//    }
-    
     // MARK: - JSQMessageViewContorller Datasource
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return jsqMessages.count
     }
-    
-//    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return jsqMessages.count
-//    }
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -450,10 +355,8 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         
         
-//        let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
-        
-        
         let message = jsqMessages[indexPath.item]
+        
         if message.media == nil {
             if message.senderId == self.senderId {
                 cell.textView?.textColor = UIColor.white
@@ -466,25 +369,6 @@ class MessagesViewController: JSQMessagesViewController, UIImagePickerController
         
         return cell
     }
-    
-    
-//    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
-//    {
-//        let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
-//        let message = jsqMessages[indexPath.item]
-//        if message.media == nil {
-//            if message.senderId == self.senderId {
-//                cell.textView?.textColor = UIColor.whiteColor()
-//            } else {
-//                cell.textView?.textColor = UIColor.blackColor()
-//            }
-//            
-//            cell.textView?.linkTextAttributes = [NSForegroundColorAttributeName : cell.textView!.textColor!]
-//        }
-//        
-//        return cell
-//    }
-    
     
     
 }

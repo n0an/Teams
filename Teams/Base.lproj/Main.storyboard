@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ast-nb-eo5" id="Uj4-0k-buo">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="80.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="NPE-mX-k7e">
@@ -97,14 +97,15 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem systemItem="compose" id="3Mf-h4-gKF"/>
                         <barButtonItem title="Log Out" id="YSg-8y-AQI">
                             <connections>
                                 <action selector="logOutClickedWithSender:" destination="MGn-Cr-x5h" id="bwL-kT-vvo"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="MIy-LQ-ccE"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="MIy-LQ-ccE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="3Mf-h4-gKF"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="logOutBarButtonItem" destination="YSg-8y-AQI" id="6Xj-hr-jnE"/>
@@ -127,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Nf-Cn-SVM" id="tUK-TJ-R1N">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="56.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="LLy-t7-vrl">
@@ -175,10 +176,10 @@
                             <outlet property="delegate" destination="Roy-9I-91T" id="roU-Fr-v6V"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem systemItem="search" id="LYN-bh-Twc"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="fIV-gf-xeR"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="fIV-gf-xeR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="LYN-bh-Twc"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAw-Tq-cla" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,7 +199,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MKf-bv-EvM" id="Jby-yY-Y2K">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1077,6 +1078,42 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3851" y="2242"/>
+        </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="npr-Vt-VOY">
+            <objects>
+                <viewController storyboardIdentifier="MessagesViewController" id="2MQ-Js-aMY" customClass="MessagesViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ni9-GB-DGN"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ey-6o-kLb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lzo-0f-OWs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ozf-N4-lKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="355"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="Poe-4N-KCZ">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewController" id="JVU-Be-QnH" customClass="PhotoViewController" customModule="Teams" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UML-0a-zdY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uy7-Au-ear"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lMj-u8-GTh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIW-vS-xbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3132" y="355"/>
         </scene>
     </scenes>
     <resources>

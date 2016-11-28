@@ -28,6 +28,7 @@
 		1804E9211DEB6672005A2CF4 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9201DEB6672005A2CF4 /* ContactsTableViewController.swift */; };
 		1804E9231DEB66D0005A2CF4 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9221DEB66D0005A2CF4 /* ContactTableViewCell.swift */; };
 		1804E9261DEB6EEF005A2CF4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E9251DEB6EEF005A2CF4 /* MessagesViewController.swift */; };
+		18C198EE1DEC07E0000AFE78 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C198ED1DEC07E0000AFE78 /* PhotoViewController.swift */; };
 		806E6641B612C556EC3F5769 /* Pods_Teams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6631E569A00249E5FF70B67E /* Pods_Teams.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		1804E9201DEB6672005A2CF4 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		1804E9221DEB66D0005A2CF4 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		1804E9251DEB6EEF005A2CF4 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		18C198ED1DEC07E0000AFE78 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		54FEB0CB9DED71B40FED2DA8 /* Pods-Teams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teams/Pods-Teams.debug.xcconfig"; sourceTree = "<group>"; };
 		6631E569A00249E5FF70B67E /* Pods_Teams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD06544AEB1E7242CC0C73DD /* Pods-Teams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teams.release.xcconfig"; path = "Pods/Target Support Files/Pods-Teams/Pods-Teams.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,9 +113,9 @@
 				1804E9171DEB4D29005A2CF4 /* Join and Create Team */,
 				1804E91A1DEB5932005A2CF4 /* Recents Tab */,
 				1804E9241DEB66D3005A2CF4 /* Contacts Tab */,
+				18C198EF1DEC0A6C000AFE78 /* MessagesViewController */,
 				1804E9001DEB444A005A2CF4 /* Model */,
 				1804E8EE1DEB3A8D005A2CF4 /* Main.storyboard */,
-				1804E9251DEB6EEF005A2CF4 /* MessagesViewController.swift */,
 				1804E8F11DEB3A8D005A2CF4 /* Assets.xcassets */,
 				1804E8F31DEB3A8D005A2CF4 /* LaunchScreen.storyboard */,
 				1804E8F61DEB3A8D005A2CF4 /* Info.plist */,
@@ -176,6 +178,15 @@
 				1804E9221DEB66D0005A2CF4 /* ContactTableViewCell.swift */,
 			);
 			name = "Contacts Tab";
+			sourceTree = "<group>";
+		};
+		18C198EF1DEC0A6C000AFE78 /* MessagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1804E9251DEB6EEF005A2CF4 /* MessagesViewController.swift */,
+				18C198ED1DEC07E0000AFE78 /* PhotoViewController.swift */,
+			);
+			name = MessagesViewController;
 			sourceTree = "<group>";
 		};
 		A61E963B9D51B419472BC394 /* Frameworks */ = {
@@ -332,6 +343,7 @@
 				1804E9021DEB44EE005A2CF4 /* Team.swift in Sources */,
 				1804E91E1DEB5DFE005A2CF4 /* JoinTeamViewController.swift in Sources */,
 				1804E8FD1DEB4179005A2CF4 /* User.swift in Sources */,
+				18C198EE1DEC07E0000AFE78 /* PhotoViewController.swift in Sources */,
 				1804E9061DEB481D005A2CF4 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

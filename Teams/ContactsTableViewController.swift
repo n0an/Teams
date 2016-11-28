@@ -82,6 +82,49 @@ class ContactsTableViewController: UITableViewController {
         return 57.0
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let currentUser = User.current()!
+        let user1 = currentUser
+        let user2 = self.users[indexPath.row]
+        
+        // just a conversation
+        var conversation = Conversation(teamId: teamId, user1: user1, user2: user2)
+        
+        // instantiate MessagesViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let messagesVC = storyboard.instantiateViewController(withIdentifier: "MessagesViewController") as! MessagesViewController
+        
+        let predicate = NSPredicate(format: "user1 = %@ AND user2 = %@ OR user1 = %@ AND user2 = %@", user1, user2, user2, user1)
+        
+        // find an existing conversation
+        let conversationQuery = PFQuery(className: Conversation.parseClassName(), predicate: predicate)
+        conversationQuery.cachePolicy = .networkElseCache
+        
+        conversationQuery.findObjectsInBackground { (objects, error) -> Void in
+            if error == nil && objects!.count > 0 {
+                
+                // we found an existing conversation
+                conversation = objects?.last as! Conversation
+                messagesVC.conversation = conversation
+                messagesVC.incomingUser = user2
+                messagesVC.hidesBottomBarWhenPushed = true
+                
+                self.navigationController?.pushViewController(messagesVC, animated: true)
+            } else {
+                conversation.saveInBackground(block: { (success, error) -> Void in
+                    if error == nil {
+                        messagesVC.conversation = conversation
+                        messagesVC.incomingUser = user2
+                        messagesVC.hidesBottomBarWhenPushed = true
+                        
+                        self.navigationController?.pushViewController(messagesVC, animated: true)
+                    }
+                })
+            }
+        }
+    }
 
     
     
